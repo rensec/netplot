@@ -1,0 +1,88 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  D:\Rense\Netplot\Git\netplot\netplot_test01_padgett.log
+  log type:  text
+ opened on:  15 Aug 2013, 16:37:24
+
+. 
+. // Setup
+. version 12
+
+. clear all
+
+. macro drop _all
+
+. set linesize 120
+
+. set seed  889977452
+
+. cd
+D:\Rense\Netplot\Git\netplot
+
+. //----------------------------------------------------------------------------/
+. 
+. // #1
+. use Padgett_marital02_undir.dta
+(Padgett marital data with undirected ties)
+
+. 
+. netplot from to
+Calculating coordinates...
+Drawing layout...
+
+. graph rename nooptions
+
+. 
+. netplot from to, type(mds)
+Calculating coordinates...
+Drawing layout...
+
+. graph rename mds
+
+. 
+. netplot from to, type(circle)
+Calculating coordinates...
+Drawing layout...
+
+. graph rename circle
+
+. 
+. netplot from to, type(circle) label
+Calculating coordinates...
+Drawing layout...
+
+. graph rename circlelabel
+
+. 
+. netplot from to, type(circle) arrow
+Calculating coordinates...
+Drawing layout...
+
+. graph rename circlearrow
+
+. 
+. netplot from to, iterations(4)
+Calculating coordinates...
+convergence not achieved: tolerance and ltolerance criteria failed
+Drawing layout...
+
+. graph rename iterations
+
+. 
+. graph combine nooptions mds circle circlelabel circlearrow iterations
+
+. 
+. graph export netplot_test01_padgett.pdf
+(file netplot_test01_padgett.pdf written in PDF format)
+
+.  
+. 
+. 
+. 
+. //----------------------------------------------------------------------------/
+. log close
+      name:  <unnamed>
+       log:  D:\Rense\Netplot\Git\netplot\netplot_test01_padgett.log
+  log type:  text
+ closed on:  15 Aug 2013, 16:37:30
+------------------------------------------------------------------------------------------------------------------------
